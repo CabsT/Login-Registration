@@ -67,3 +67,38 @@ document.getElementById("registerForm").addEventListener("submit", async (e) => 
 			alert("An error occurred. Please try again later.");
 	}
 });
+
+
+// Login form
+document.getElementById("loginForm").addEventListener("submit", async (e) => {
+	e.preventDefault();
+
+	const email = document.getElementById("loginEmail").value;
+	const password = document.getElementById("loginPassword").value;
+
+	// Basic validation
+	if (!email || !password) {
+			alert("Please enter both email and password.");
+			return;
+	}
+
+	const data = { email, password };
+
+	try {
+			const response = await axios.post("http://127.0.0.1:5000/login", data, {
+					headers: { "Content-Type": "application/json" },
+			});
+
+			if (response.status === 201 && response.data.isRegistered) {
+            // Redirect to the 'welcome' page upon successful login
+            alert("Successfully logged in");
+            window.location.href = '/welcome.html'		
+					
+			} else {
+					alert("Please register before logging in.");
+			}
+	} catch (error) {
+			console.error("Error during login:", error);
+			alert("Login failed. Please try again.");
+	}
+});
