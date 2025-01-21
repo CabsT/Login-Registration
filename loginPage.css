@@ -36,8 +36,7 @@ input {
 .toggle-password {
   position: absolute;
   right: 10px; 
-  top: 40%;
-  transform: translateY(-60%);
+  top: 10%;
   cursor: pointer;
   font-size: 18px;
   color: #5f3078;

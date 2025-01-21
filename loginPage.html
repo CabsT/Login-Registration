@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Register/Login Page</title>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 		<link rel="stylesheet" href="loginPage.css" />
 	</head>
 	<body>
@@ -13,8 +13,10 @@
 			<form id="registerForm">
 				<input type="text" id="name" placeholder="Name" required />
 				<input type="text" id="surname" placeholder="Surname" required />
-				<input type="tel" id="phone" placeholder="Telephone Number" required />
+				<input type="text" id="phone" placeholder="Phone Number" />
+				<small id="phoneError" style="color: red"></small>
 				<input type="email" id="email" placeholder="Email Address" required />
+				<small id="emailError" style="color: red;"></small>
 				<div class="password-container">
 					<input
 						type="password"
@@ -23,6 +25,7 @@
 						placeholder="Password"
 						required
 					/>
+					<small id="passwordError" style="color: red;"></small>
 					<span class="toggle-password" id="togglePassword">👁</span>
 				</div>
 				<div class="password-container">
@@ -60,6 +63,8 @@
 				<button type="submit">Login</button>
 			</form>
 		</div>
+		<script src="inputField.js"></script>
+		<script src="registration.js"></script>
 		<script src="loginPage.js"></script>
 	</body>
 </html>
