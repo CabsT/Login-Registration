@@ -25,4 +25,4 @@ function togglePasswordVisibility(passwordFieldId, toggleIconId) {
 // Attach toggle functionality to password fields
 togglePasswordVisibility("password", "togglePassword");
 togglePasswordVisibility("confirmPassword", "toggleConfirmPassword");
-togglePasswordVisibility("loginPassword", "toggleLoginPassword");
+
