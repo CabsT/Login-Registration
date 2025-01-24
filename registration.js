@@ -28,12 +28,13 @@ document.getElementById("email").addEventListener("input", () => {
 
 // Real-time password validation
 document.getElementById("password").addEventListener("input", () => {
-	const password = document.getElementById("password").value;
+	const password = document.getElementById("password").value.trim();
+	const passwordRegex =  /^(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*":{}|]{8,}$/; 
 
 	// Validate password length and symbol
-	if (password.length <= 8 || !/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+	if (!passwordRegex.test(password)) {
 		document.getElementById("passwordError").textContent =
-			"Password must be more than 8 characters long and include at least one symbol.";
+			"Password must contain 8 or more characters and include a special character.";
 	} else {
 		document.getElementById("passwordError").textContent = "";
 	}
