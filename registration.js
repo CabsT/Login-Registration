@@ -34,7 +34,7 @@ document.getElementById("password").addEventListener("input", () => {
 	// Validate password length and symbol
 	if (!passwordRegex.test(password)) {
 		document.getElementById("passwordError").textContent =
-			"Password must contain 8 or more characters and include a special character.";
+			"Password must contain 8 or more characters and include a special character and digit.";
 	} else {
 		document.getElementById("passwordError").textContent = "";
 	}
