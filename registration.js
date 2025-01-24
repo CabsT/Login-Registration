@@ -12,10 +12,10 @@ document.getElementById("phone").addEventListener("input", () => {
 	}
 });
 
-// Real-time email validation
+// Real-time email validation: https://www.akto.io/tools/email-regex-Javascript-tester
 document.getElementById("email").addEventListener("input", () => {
-	const email = document.getElementById("email").value.trim();
-	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	const email = document.getElementById("email");
+	const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/ ;
 
 	// Validate email address
 	if (!emailRegex.test(email)) {
